@@ -15,6 +15,11 @@ for line in gen_file_obj:
 
 # basic logic
 for i in range(0, len(text) - len(find) + 1):
-  print(text[i:i+len(find)])
+  search_str = text[i:i+len(find)]
+  if (search_str == find):
+    text1 = text[0:i]
+    text2 = text[i + len(search_str):len(text)]
+    print (text1)
+    print (text2)
 
 # output
