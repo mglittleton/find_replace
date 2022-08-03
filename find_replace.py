@@ -1,17 +1,15 @@
 # imports
 import sys
-import fileinput
 
 # initial variables
 count = 0
-gen_file_obj = fileinput.input(files = sys.argv[1])
-text=''
+file = sys.argv[1]
 find = sys.argv[2]
 replace = sys.argv[3]
 
 # data manipulation
-for line in gen_file_obj:
-  text += line
+gen_file = open(file, 'r+')
+text = gen_file.read()
 
 # basic logic
 for i in range(0, len(text) - len(find) + 1):
@@ -19,7 +17,10 @@ for i in range(0, len(text) - len(find) + 1):
   if (search_str == find):
     text1 = text[0:i]
     text2 = text[i + len(search_str):len(text)]
-    print (text1)
-    print (text2)
+    text = ''.join([text1, replace, text2])
+    count += 1
 
 # output
+gen_file.write(text)
+print(count)
+gen_file.close()
