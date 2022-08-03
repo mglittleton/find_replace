@@ -21,10 +21,8 @@ for i in range(0, len(text) - len(find) + 1):
     count += 1
 
 # output
-with open(file, "r") as fp:
-  lines = fp.readlines()
-  for line in lines:
-    print (line)
+with open(file, "r+") as fp:
+  fp.truncate()
 # gen_file.write(text)
 print(count)
 gen_file.close()
