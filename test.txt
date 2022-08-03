@@ -1,5 +1,5 @@
-This is a file that I am using as a test of the other file.
+This is a file that I am using as a test of the world file.
 
-The purpose of this file is to test the other file.
+The purpose of this file is to test the world file.
 
-The other file is not a test of this file. It's the other way around.
+The world file is not a test of this file. It's the world way around.

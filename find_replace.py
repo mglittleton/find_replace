@@ -8,8 +8,12 @@ find = sys.argv[2]
 replace = sys.argv[3]
 
 # data manipulation
-gen_file = open(file, 'r+')
-text = gen_file.read()
+text = ''
+with open(file, 'r') as rf:
+  lines = rf.readlines()
+
+for line in lines:
+  text += line
 
 # basic logic
 for i in range(0, len(text) - len(find) + 1):
@@ -21,8 +25,7 @@ for i in range(0, len(text) - len(find) + 1):
     count += 1
 
 # output
-with open(file, "r+") as fp:
-  fp.truncate()
-# gen_file.write(text)
-print(count)
-gen_file.close()
+with open(file, 'w') as wf:
+  wf.write(text)
+
+print(text)
